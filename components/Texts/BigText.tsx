@@ -5,16 +5,17 @@ import styled from "styled-components/native"
 //colors
 import { colors } from "../colors"
 const StyledText = styled.Text`
-  font-size: 13px;
-  color: ${colors.gray};
+  font-size: 37px;
+  color: ${colors.white};
   text-align: left;
-  font-family: Lato-Regular;
+  font-family: Lato-Bold;
 `;
 
 //types
 import { TextProps } from "./types";
-const SmallText: FunctionComponent<TextProps> = (props) => { 
+
+const BigText: FunctionComponent<TextProps> = (props) => { 
   return <StyledText style={props.textStyles}>{props.children}</StyledText>
 }; 
 
-export default SmallText;
+export default BigText;
