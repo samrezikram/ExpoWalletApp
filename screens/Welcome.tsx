@@ -11,7 +11,7 @@ import RegularButton from "../components/Buttons/RegularButton";
 
 
 
-const WelcomeContainer = styled(Container) `
+const WelcomeContainer = styled(Container)`
   background-color: ${colors.secondary};
   justify-content: space-between;
   width: 100%;
