@@ -17,6 +17,8 @@ import Greeting from "../components/Header/Greeting";
 import Profile from "../components/Header/Profile";
 import Avi from "./../assets/avi/avatar.png";
 
+
+
 // For Balance screen
 import { CardProps } from "../components/Cards/types";
 
@@ -54,7 +56,7 @@ const RootStack: FunctionComponent = () => {
             imgContainerStyle={{backgroundColor: colors.tertiary}}/>
           ), 
         }}
-        initialRouteName="Balance">
+        initialRouteName="Welcome">
         <Stack.Screen
           name="Welcome"
           component={Welcome}

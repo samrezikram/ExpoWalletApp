@@ -29,7 +29,7 @@ const SendMoneyItem: FunctionComponent<SendMoneyProps> = (props) => {
     <SendMoneyItemContainer
       underlayColor={colors.secondary}
       style={{backgroundColor: props.background}}
-      onPress={ () => { alert('Send Money')}}
+      onPress={ () => { alert(props.name)}}
       >
         <>
         <Profile img={props.img} imgContainerStyle={{ marginBottom: 10}}/>
