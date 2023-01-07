@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import styled from "styled-components/native";
 
 import { View } from "react-native";
-import { CardProps } from "./types";
+import { BalanceCardProps } from "./types";
 
 // components
 import { ScreenHeight, ScreenWidth } from "../shared";
@@ -10,18 +10,11 @@ import { colors } from "../colors";
 
 const CardBackground = styled.ImageBackground`
   height: 75%;
-  width: ${ScreenWidth * 0.67}px;
+  width: 100%;
   resize-mode: cover;
   background-color: ${colors.accent};
   border-radius: 25px; 
-  margin-right: 25px;  
   overflow: hidden;
-`;
-
-
-const CardTouchable = styled.TouchableHighlight`
-  height: 100%;
-  border-radius: 25px; 
 `;
 
 const TouchableView = styled.View`
@@ -48,19 +41,18 @@ const Logo = styled.Image`
 import cardBG from "./../../assets/bgs/background_transparent.png";
 import RegularText from "../Texts/RegularText";
 import SmallText from "../Texts/SmallText";
+import BigText from "../Texts/BigText";
 
 
-const CardItem: FunctionComponent<CardProps> = (props) => {
+const BalanceCard: FunctionComponent<BalanceCardProps> = (props) => {
 
-  const handlePress = () => {};
   return (
 
     <CardBackground source={cardBG}>
-      <CardTouchable underlayColor={colors.secondary} onPress={handlePress}>
         <TouchableView>
           <CardRow>
             <RegularText textStyles={{ color: colors.white }}>
-            ****** {props.accountNo.slice(6,10)}
+            ****** {props?.accountNo?.slice(6,10)}
             </RegularText>
           </CardRow>
           <CardRow>
@@ -68,16 +60,15 @@ const CardItem: FunctionComponent<CardProps> = (props) => {
               <SmallText textStyles={{color: colors.white}}>
                 Total balance
               </SmallText>
-              <SmallText textStyles={{color: colors.white}}>
-                {props.balance}
-              </SmallText>
+              <RegularText textStyles={{color: colors.white}}>
+               $ {props?.balance}
+              </RegularText>
             </View>
             <Logo source={props.logo} />
           </CardRow>
         </TouchableView>     
-       </CardTouchable>
     </CardBackground>  
   );
 };
 
-export default CardItem;
+export default BalanceCard;
